@@ -33,10 +33,10 @@ jobs:
           # required for PR comments and close logic
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           # tell the action what to do: "upload" or "close"
-          deployment_action: upload                                   # ← was "action"
+          action: "upload"                                   # ← was "action"
           app_location: "/"       
           api_location: ""        
-          output_location: "."      
+          output_location: "/"      
 
   close_pull_request:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
